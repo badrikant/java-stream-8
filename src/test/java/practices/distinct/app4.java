@@ -22,7 +22,7 @@ public class app4 {
         final List<Integer> numbers = ImmutableList.of(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9, 9);
 
         List<Integer> distinctNumber = numbers.stream()
-                .distinct()
+                .distinct()  // can be used when list needed with unique elements.
                 .collect(Collectors.toList());
 
         assertThat(distinctNumber).hasSize(9);
@@ -38,7 +38,7 @@ public class app4 {
         final List<Integer> numbers = ImmutableList.of(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9, 9);
 
         Set<Integer> distinctNumbers = numbers.stream()
-                .collect(Collectors.toSet());
+                .collect(Collectors.toSet());  // can be used when needed set collection with unique elements
 
         assertThat(distinctNumbers).hasSize(9);
 
