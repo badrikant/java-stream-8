@@ -1,4 +1,4 @@
-package practices.findAny;
+package practices.findAnyAndfindFirst;
 
 import org.junit.Test;
 
