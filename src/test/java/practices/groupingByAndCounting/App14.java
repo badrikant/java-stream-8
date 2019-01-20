@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -49,6 +50,25 @@ public class App14 {
         Map<String, Long> collect = newArrayList.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         collect.forEach((s, aLong) -> {
+            System.out.println(s + " > " + aLong);
+        });
+    }
+
+    @Test
+    public void WordsCount() {
+        String sentence = "The big brown fox, jumped over the fence and jumped in a hole.";
+
+        // Part (A)Word Splitting
+        String[] words = sentence
+                .trim()
+                .replaceAll("[^A-Za-z]", " ") // replace delimeters by empty space
+                .toLowerCase()  // covert it lower case
+                .split("\\s+"); // split by space character
+
+        Map<String, Long> countMap = Arrays.stream(words)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        countMap.forEach((s, aLong) -> {
             System.out.println(s + " > " + aLong);
         });
     }
